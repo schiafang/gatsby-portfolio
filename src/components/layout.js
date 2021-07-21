@@ -4,12 +4,14 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import { ThemeProvider } from 'styled-components'
 
 import GlobalStyle from '../styles/global'
+import NavMenus from './nav-menus'
 import { darkTheme, lightTheme } from '../themes/theme'
 import * as S from '../styles/layout'
-import IconMoon from '../images/moon.svg'
-import IconDay from '../images/sun.svg'
 
 const Layout = ({ children }) => {
+    const [isDark, setIsDark] = useState(false)
+    const theme = isDark ? darkTheme : lightTheme
+
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
             site {
@@ -20,35 +22,20 @@ const Layout = ({ children }) => {
         }
     `)
 
-    const [isDark, setIsDark] = useState(false)
-
     return (
-        <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-            <GlobalStyle theme={isDark ? darkTheme : lightTheme} />
+        <ThemeProvider theme={theme}>
+            <GlobalStyle theme={theme} />
             <S.Wrapper>
                 <S.Header>
                     <Link to="/">
                         <h2>{data.site.siteMetadata?.title} </h2>
                     </Link>
-
-                    <div>
-                        <button
-                            className="theme-toggle"
-                            aria-label="theme-toggle"
-                            onClick={() => setIsDark(pre => !pre)}
-                        >
-                            {isDark ? (
-                                <IconMoon className="toggler-moon" />
-                            ) : (
-                                <IconDay className="toggler-sun" />
-                            )}
-                        </button>
-                        <Link to="/blog">ARTICLE</Link>
-                        <span>/</span>
-                        <Link to="/blog">RESUME</Link>
-                    </div>
+                    <NavMenus
+                        isDark={isDark}
+                        setIsDark={() => setIsDark(pre => !pre)}
+                    />
                 </S.Header>
-                <S.Main>{children}</S.Main>
+                {children}
                 <S.Footer>footer</S.Footer>
             </S.Wrapper>
         </ThemeProvider>

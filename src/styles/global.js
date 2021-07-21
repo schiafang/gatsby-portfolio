@@ -18,5 +18,10 @@ export default createGlobalStyle`
                 background: ${props => props.theme.green};
             }
         }
+
+        #gatsby-focus-wrapper {
+            height: 0;
+            flex-grow: 1;
+        }
     `}
 `
