@@ -18,6 +18,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
     const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
+    const blogListTemplate = path.resolve(`./src/templates/blog-list.js`)
 
     return graphql(`
         {
@@ -34,14 +35,33 @@ exports.createPages = ({ graphql, actions }) => {
         }
     `).then(result => {
         if (result.errors) throw result.errors
+        const posts = result.data.allMarkdownRemark.edges
 
-        result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        // Post pages
+        posts.forEach(({ node }) => {
             createPage({
                 path: `/blog${node.fields.slug}`,
                 component: blogPostTemplate,
                 context: {
                     id: node.id,
                     slug: node.fields.slug,
+                },
+            })
+        })
+
+        // Post list pages
+        const perPageNum = 10
+        const numOfPages = Math.ceil(posts.length / perPageNum)
+
+        Array.from({ length: numOfPages }).forEach((_, i) => {
+            createPage({
+                path: `list/${i + 1}`,
+                component: blogListTemplate,
+                context: {
+                    limit: perPageNum,
+                    skip: i * perPageNum,
+                    numOfPages,
+                    currentPage: i + 1,
                 },
             })
         })
