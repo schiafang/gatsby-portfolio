@@ -1,18 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { PostMainContent, PostWrapper } from '../styles/post'
+import { PostMainContent } from '../styles/blog-post'
 
 const BlogPostTemplate = ({ data }) => {
     const post = data.markdownRemark
 
     return (
-        <PostWrapper>
-            <PostMainContent>
-                <h1>{post.frontmatter.title}</h1>
-                <span className="post-date">{post.frontmatter.date}</span>
-                <section dangerouslySetInnerHTML={{ __html: post.html }} />
-            </PostMainContent>
-        </PostWrapper>
+        <PostMainContent>
+            <h1 className="post-title">{post.frontmatter.title}</h1>
+            <span className="post-date">{post.frontmatter.date}</span>
+            <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        </PostMainContent>
     )
 }
 
