@@ -1,19 +1,20 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
+    height: auto;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    padding: 2rem 7.5rem;
     max-width: 100vw;
+    min-height: 100vh;
+    padding: 1rem;
     overflow: hidden;
 
     @media ${props => props.theme.breakpoints.tablet} {
-        padding: 2rem;
+        padding: 1rem 2rem;
     }
 
-    @media ${props => props.theme.breakpoints.mobile} {
-        padding: 0 1rem;
+    @media ${props => props.theme.breakpoints.desktop} {
+        padding: 1rem 7.5rem;
     }
 `
 
@@ -50,11 +51,11 @@ export const Menus = styled.div`
 
     .menu-items-mobile {
         background-color: ${props => props.theme.mainColor};
-        position: absolute;
+        position: fixed;
+        width: 100vw;
         height: 100vh;
         top: 0;
-        right: -1rem;
-        width: 100vw;
+        right: 0;
         z-index: 99;
         transform: translateX(100%) translate3d(120px, 0, 0);
         transition: transform 0.5s cubic-bezier(0.15, 0.65, 0.66, 0.11);
@@ -78,7 +79,7 @@ export const Menus = styled.div`
         }
 
         *::selection {
-            background: ${props => props.theme.red};
+            background: ${props => props.theme.yellow};
         }
     }
 
@@ -115,7 +116,7 @@ export const Menus = styled.div`
             display: block;
             width: 30px;
             height: 4px;
-            background-color: ${props => props.theme.yellow};
+            background-color: ${props => props.theme.red};
             transform: translateY(-50%);
             position: absolute;
             top: 50%;

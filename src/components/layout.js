@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
             <S.Wrapper>
                 <S.Header>
                     <Link to="/">
-                        <h2>{data.site.siteMetadata?.title} </h2>
+                        <h3>{data.site.siteMetadata?.title} </h3>
                     </Link>
                     <NavMenus
                         isDark={isDark}

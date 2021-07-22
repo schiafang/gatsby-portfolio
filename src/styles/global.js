@@ -6,7 +6,7 @@ export default createGlobalStyle`
             margin: 0;
             padding: 0;
             font-weight: 400;
-            font-size: 1.125rem;
+            font-size: 16px;
             line-height: 1.56;
             letter-spacing: 0.9px;
             color: ${props => props.theme.mainColor};
@@ -20,7 +20,6 @@ export default createGlobalStyle`
         }
 
         #gatsby-focus-wrapper {
-            height: 0;
             flex-grow: 1;
         }
     `}
