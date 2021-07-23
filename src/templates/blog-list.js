@@ -1,31 +1,43 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import { PostListWrapper } from '../styles/blog-list'
+import { PostListWrapper, PostPageLink } from '../styles/blog-list'
 
 const BlogListTemplate = ({ data, pageContext, ...props }) => {
     const posts = data.allMarkdownRemark.edges
     const { currentPage, numOfPages } = pageContext
-    console.log({ props })
+    console.log({ posts })
 
     return (
         <PostListWrapper>
             {posts.map(({ node }) => {
                 const title = node.frontmatter.title
                 return (
-                    <article key={node.id} style={{ margin: '45px 0' }}>
+                    <article key={node.id}>
                         <header>
-                            <h3>
-                                <Link to={`/blog${node.fields.slug}`}>
-                                    {title}
-                                </Link>
-                            </h3>
-                            <small>{node.frontmatter.date}</small>
+                            <Link
+                                to={`/blog${node.fields.slug}`}
+                                className="title"
+                            >
+                                {title}
+                            </Link>
+                            {node.frontmatter.categories.map((item, index) => {
+                                return (
+                                    <span key={index} className="category-tag">
+                                        {item}
+                                    </span>
+                                )
+                            })}
+                            <div></div>
+                            <small className="date">
+                                {node.frontmatter.date}
+                            </small>
                         </header>
                         <section>
                             <p
+                                className="excerpt"
                                 dangerouslySetInnerHTML={{
                                     __html:
-                                        node.frontmatter.description ||
+                                        // node.frontmatter.description ||
                                         node.excerpt,
                                 }}
                             />
@@ -33,12 +45,18 @@ const BlogListTemplate = ({ data, pageContext, ...props }) => {
                     </article>
                 )
             })}
-            {currentPage !== 1 && (
-                <Link to={`/list/${currentPage - 1}`}>pre</Link>
-            )}
-            {currentPage !== numOfPages && (
-                <Link to={`/list/${currentPage + 1}`}>next</Link>
-            )}
+            <PostPageLink>
+                {currentPage !== 1 && (
+                    <Link to={`/list/${currentPage - 1}`} className="pre-page">
+                        Previous
+                    </Link>
+                )}
+                {currentPage !== numOfPages && (
+                    <Link to={`/list/${currentPage + 1}`} className="next-page">
+                        Next
+                    </Link>
+                )}
+            </PostPageLink>
         </PostListWrapper>
     )
 }
@@ -54,8 +72,9 @@ export const query = graphql`
                 node {
                     frontmatter {
                         title
-                        date(formatString: "DD MMMM YYYY")
+                        date(formatString: "MM/DD/YY")
                         description
+                        categories
                     }
                     id
                     fields {
