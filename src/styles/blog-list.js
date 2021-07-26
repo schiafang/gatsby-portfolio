@@ -19,14 +19,13 @@ export const PostListWrapper = styled.div`
     }
 
     .category-tag {
-        border: 1px solid ${props => props.theme.yellow}60;
         border-radius: 2px;
         font-size: 0.8rem;
         color: ${props => props.theme.mainColor}90;
         background-image: ${props => {
-            const direction = '100deg'
+            const direction = '145deg'
             const color = props.theme.yellow
-            return `linear-gradient(${direction}, ${color}40,  ${color}60)`
+            return `linear-gradient(${direction}, ${color}70,  ${color}30)`
         }};
         background-repeat: no-repeat;
         background-size: 100% 0.45em;

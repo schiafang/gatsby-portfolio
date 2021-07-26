@@ -2,10 +2,11 @@ export const baseTheme = {
     green: '#49c5b6',
     red: '#D14836',
     yellow: '#ECD06F',
+    darkGray: '#333',
     breakpoints: {
-        mobile: 'only screen and (max-width: 768px)',
-        tablet: 'only screen and (min-width: 768px)',
-        desktop: 'only screen and (min-width: 1040px)',
+        mobile: 'screen and (max-width: 768px)',
+        tablet: 'screen and (min-width: 768px)',
+        desktop: 'screen and (min-width: 1040px)',
     },
 }
 
@@ -14,6 +15,7 @@ export const darkTheme = {
     isDarkMode: true,
     mainColor: '#f2efe7',
     mainBackground: '#212121',
+    lightBorder: '#333',
 }
 
 export const lightTheme = {
@@ -21,4 +23,5 @@ export const lightTheme = {
     isDarkMode: false,
     mainColor: '#212121',
     mainBackground: '#f2efe7',
+    lightBorder: '#ddd',
 }
