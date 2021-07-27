@@ -208,46 +208,65 @@ export const Info = styled.div`
 
 export const ContentWrapper = styled.div`
     width: 100%;
-    height: auto;
-    flex-grow: 1;
+    padding: 30px;
     border-radius: 0 0 4px 4px;
-    /* padding: 30px; */
     border-top: 2px solid ${props => props.theme.lightBorder};
+    display: flex;
+    flex-direction: column;
 
     @media ${props => props.theme.breakpoints.desktop} {
         height: 100%;
+        grid-column: 2 / 3;
         border-top: none;
         border-left: 2px solid ${props => props.theme.lightBorder};
-        grid-column: 2 / 3;
         border-radius: 0 4px 4px 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0 5px;
     }
 `
 
 export const ContentSection = styled.section`
-    margin: 15px 0;
-    background-color: pink;
-    padding: 30px;
+    height: 100%;
+    font-size: 0.85rem;
+    margin-bottom: 30px;
 
-    .skills {
+    &.skills > h4 {
+        margin: 1.5rem 0 0.5rem 0;
+    }
+
+    @media ${props => props.theme.breakpoints.desktop} {
+        padding: 2rem;
+        grid-row: 1 / 2;
+
+        &.experience {
+            grid-column: 1 / span 1;
+        }
+
+        &.skills {
+            grid-column: 2 / span 1;
+            background-color: rgba(255,255,255,.2)};
+        }
     }
 `
 
 export const SectionTitle = styled.div`
     display: block;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     position: relative;
     margin-bottom: 15px;
 
-    &::after {
+    &.skills::after {
         content: '';
         display: inline-block;
         position: relative;
         top: 50%;
         right: -0.3rem;
-        transform: translateY(20%);
-        width: 5px;
-        height: 1.3rem;
+        transform: translateY(15%);
+        width: 4px;
+        height: 1.2rem;
         background-color: ${props => props.theme.green};
         animation: blinkCursor 3s step-end infinite;
 
@@ -259,6 +278,24 @@ export const SectionTitle = styled.div`
             50% {
                 opacity: 0;
             }
+        }
+    }
+`
+
+export const Skill = styled.li`
+    margin: 0.5rem 0;
+
+    .score-bar {
+        margin-top: 5px;
+        height: 8px;
+        width: 100%;
+        max-width: 250px;
+        border-radius: 2px;
+        background-color: ${props => props.theme.red}10;
+
+        > .score {
+            height: inherit;
+            background-color: ${props => props.theme.green}80;
         }
     }
 `
