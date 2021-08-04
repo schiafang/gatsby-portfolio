@@ -16,6 +16,7 @@ import {
     faQuoteLeft,
     faEnvelope,
     faPhone,
+    faRocket,
 } from '@fortawesome/free-solid-svg-icons'
 
 function formatFullname(lastName, firstName) {
@@ -66,29 +67,6 @@ const profileInfo = {
             label: <Icon icon={faTwitter} />,
         },
     },
-}
-
-const skillsScore = {
-    ['Javascript ES6']: 85,
-    Typescript: 68,
-    CSS3: 80,
-    HTML5: 75,
-}
-
-const Skills = () => {
-    const skills = []
-    for (let key in skillsScore) {
-        const value = skillsScore[key]
-        skills.push(
-            <S.Skill>
-                {key}
-                <div className="score-bar">
-                    <div className="score" style={{ width: `${value}%` }} />
-                </div>
-            </S.Skill>
-        )
-    }
-    return skills
 }
 
 const AboutPage = () => {
@@ -161,72 +139,112 @@ const AboutPage = () => {
             <S.ContentWrapper>
                 <S.ContentSection className="skills">
                     <S.SectionTitle className="skills">SKILLS</S.SectionTitle>
-                    <h4>Front-end Technical</h4>
-                    <ul>
-                        <Skills />
-                    </ul>
-                    <h4>Framework</h4>
-                    <ul>
-                        <li>React </li>
-                        <li>Redux Toolkit / Redux Thunk</li>
-                        <li> Vue.js / Vuex </li>
-                    </ul>
-                    <h4>Others</h4>
-                    <ul>
-                        <li>RWD</li>
-                        <li>Axios fetch API</li>
-                        <li>Webpack</li>
-                        <li>styled-components </li>
-                        <li> SCSS </li>
-                        <li> CSS module </li>
-                    </ul>
+                    <div>
+                        <h4>Front-end Technical</h4>
+                        <ul>
+                            <li>Javascript ES6 </li>
+                            <li>Typescript</li>
+                            <li>CSS3</li>
+                            <li>HTML5</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4>Framework</h4>
+                        <ul>
+                            <li>React </li>
+                            <li>Redux Toolkit / Redux Thunk</li>
+                            <li> Vue.js / Vuex </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4>Others</h4>
+                        <ul>
+                            <li>RWD</li>
+                            <li>Axios fetch API</li>
+                            <li>Webpack</li>
+                            <li>styled-components </li>
+                            <li> SCSS </li>
+                            <li> CSS module </li>
+                            <li>Bootstrap</li>
+                            <li>Vuetify</li>
+                            <li> Ant Design</li>
+                            <li></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4>Back-ends</h4>
+                        <ul>
+                            <li> Node.js </li>
+                            <li> Express.js</li>
+                            <li>Handlebars</li>
+                            <li>sMongoBD / mongoose</li>
+                            <li> MySQL / Sequelize </li>
+                            <li> RESTful API </li>
+                            <li>Strapi</li>
+                            <li>Socket.io</li>
+                        </ul>
+                    </div>
                 </S.ContentSection>
 
                 <S.ContentSection className="experience">
-                    <S.SectionTitle>EXPERIENCE</S.SectionTitle>
-                    <h3 className="company-name">
-                        Elementum facilisis leo vel
-                    </h3>
-                    <h5 className="work-period">
-                        Ut sem viverra aliquet eget sit amet tell
-                    </h5>
-                    <p>
-                        Mauris commodo quis imperdiet massa tincidunt nunc
-                        pulvinar sapien. Enim nunc faucibus a pellentesque sit
-                        amet. Eu volutpat odio facilisis mauris sit. Nisi lacus
-                        sed viverra tellus in hac. Ut enim blandit volutpat
-                        maecenas volutpat blandit aliquam. Leo vel fringilla est
-                        ullamcorper eget nulla. Tristique nulla aliquet enim
-                        tortor at auctor urna nunc id. Auctor eu augue ut lectus
-                        arcu bibendum at varius vel. Mauris vitae ultricies leo
-                        integer malesuada nunc. Velit ut tortor pretium viverra
-                        suspendisse potenti nullam ac tortor. Cursus euismod
-                        quis viverra nibh cras pulvinar mattis. Quam lacus
-                        suspendisse faucibus interdum posuere lorem ipsum dolor.
-                        At volutpat diam ut venenatis tellus in metus. Sit amet
-                        facilisis magna etiam tempor. Aliquam etiam erat velit
-                        scelerisque in dictum non. Bibendum neque egestas congue
-                        quisque egestas diam. Tortor at auctor urna nunc id
-                        cursus. Egestas pretium aenean pharetra magna ac
-                        placerat vestibulum. Enim tortor at auctor urna. Quis
-                        vel eros donec ac odio. Sed tempus urna et pharetra
-                        pharetra. Urna nec tincidunt praesent semper feugiat
-                        nibh sed pulvinar. At tellus at urna condimentum mattis
-                        pellentesque id nibh tortor. Dictum varius duis at
-                        consectetur lorem donec massa sapien. Eget aliquet nibh
-                        praesent tristique magna sit amet purus. Id ornare arcu
-                        odio ut sem. Leo urna molestie at elementum eu facilisis
-                        sed odio. Posuere morbi leo urna molestie at elementum
-                        eu. Quis eleifend quam adipiscing vitae proin sagittis
-                        nisl rhoncus. Nisl suscipit adipiscing bibendum est
-                        ultricies integer. Nunc mattis enim ut tellus. Id
-                        venenatis a condimentum vitae sapien pellentesque
-                        habitant morbi tristique. Hendrerit dolor magna eget
-                        est. Tincidunt eget nullam non nisi. Sit amet est
-                        placerat in egestas erat imperdiet sed euismod. Risus at
-                        ultrices mi tempus imperdiet nulla malesuada. Odio
-                        facilisis mauris sit amet.
-                    </p>
+                    <S.SectionTitle>EXPERIENCE & EDUCATION</S.SectionTitle>
+                    <section className="section-item">
+                        <h3 className="company-name">
+                            TXI Partners x 沐學雲創
+                        </h3>
+                        <h5 className="period">2020 年 11 月 - 在職中</h5>
+                        <span className="project">
+                            3D 教育平台 1.0 網站開發
+                        </span>
+                        <h4 className="project-description">
+                            建立 3D
+                            模型教材為主的線上課程平台，可由老師自由編輯課程並上架
+                        </h4>
+                        <ul className="decimal">
+                            <li>將可複用元件模組</li>
+                            <li>
+                                網頁各頁面 RWD
+                                切版，主動與設計師討論可優化的細節與流程
+                            </li>
+                            <li>篩選功能利用動態資料產生篩選條件</li>
+                            <li>會員登入註冊以及會員資料設定修改功能</li>
+                            <li>建立課程功能開發</li>
+                            <li>多國語系 i18n 環境建置，完成全站中英文切換</li>
+                            <li>協助串接 Unity 3D 課程與修復問題</li>
+                            <li>使用 Axios 串接後端 API</li>
+                            <li>
+                                與後端工程師溝通調整 API 內容以及與 UX
+                                討論使用者操作流程的可行性
+                            </li>
+                            <li>優化版面細節以及使用者流程</li>
+                        </ul>
+                    </section>
+                    <section className="section-item">
+                        <h3 className="company-name">
+                            Alpha Camp Full-Stack Web Development 全端網頁開發
+                        </h3>
+                        <h5 className="period">2019 年 10 月 - 2020 年 8 月</h5>
+
+                        <ul className="disc">
+                            <li>前後端網頁開發技能訓練</li>
+                        </ul>
+                    </section>
+
+                    <section className="section-item">
+                        <h3 className="company-name">
+                            CYCU Commercial Design 中原大學商業設計學系
+                        </h3>
+                        <h5 className="period">2007 年 9 月 - 2011 年 6 月</h5>
+
+                        <h4 className="project-description">
+                            平面設計、廣告行銷、攝影、影像製作、商品設計
+                        </h4>
+                    </section>
+
+                    <Icon icon={faRocket} />
                 </S.ContentSection>
             </S.ContentWrapper>
         </S.Wrapper>

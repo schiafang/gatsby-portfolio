@@ -13,7 +13,9 @@ export const baseTheme = {
 export const darkTheme = {
     ...baseTheme,
     isDarkMode: true,
-    mainColor: '#f2efe7',
+    // mainColor: '#f2efe7',
+    mainColor: '#ffffffe6',
+    red: '#f98080',
     mainBackground: '#212121',
     lightBorder: '#333',
 }

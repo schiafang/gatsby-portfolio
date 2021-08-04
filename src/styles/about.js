@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     height: 100%;
-    min-height: calc(100vh - 5rem);
     font-family: 'Roboto', sans-serif;
     margin: 30px 0;
     box-shadow: ${props => props.theme.mainColor}15 0px 5px 15px;
@@ -230,24 +229,118 @@ export const ContentWrapper = styled.div`
 export const ContentSection = styled.section`
     height: 100%;
     font-size: 0.85rem;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 
-    &.skills > h4 {
-        margin: 1.5rem 0 0.5rem 0;
+    &.skills {
+        display: flex;
+        flex-direction: column;
+
+        > div:not(:first-child) {
+            margin: 15px 0;
+        }
+
+        > h4 {
+            margin: 1.5rem 0 0.5rem 0;
+        }
+    }
+
+    @media ${props => props.theme.breakpoints.tablet} {
+        &.skills {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            > :first-child {
+                width: 100%;
+            }
+
+            > div {
+                width: 45%;
+            }
+        }
     }
 
     @media ${props => props.theme.breakpoints.desktop} {
         padding: 2rem;
         grid-row: 1 / 2;
+        margin-bottom: 0;
 
         &.experience {
             grid-column: 1 / span 1;
+            max-height: 100%;
+            overflow: auto;
         }
 
         &.skills {
+            display: block;
             grid-column: 2 / span 1;
-            background-color: rgba(255,255,255,.2)};
+            /* background-color: rgba(255, 255, 255, 0.2); */
+            white-space: nowrap;
         }
+    }
+
+    .section-item {
+        padding: 0 30px 60px 30px;
+        position: relative;
+
+        &::before {
+            display: block;
+            content: '';
+            width: 0.8rem;
+            height: 0.8rem;
+            background-color: ${props => props.theme.green};
+            position: absolute;
+            top: 0.4rem;
+            left: -0.4rem;
+            border-radius: 50%;
+        }
+
+        &::after {
+            display: block;
+            content: '';
+            width: 3px;
+            height: 100%;
+            background-color: ${props => props.theme.yellow}50;
+            position: absolute;
+            top: 0.8rem;
+            left: -1.5px;
+            z-index: -1;
+        }
+
+        .period {
+            margin-bottom: 0.5rem;
+            color: ${props => props.theme.red};
+        }
+
+        .project {
+        }
+
+        .project-description {
+            font-weight: normal;
+        }
+
+        > ul {
+            margin: 16px;
+            &.decimal {
+                list-style-type: decimal;
+            }
+
+            &.disc {
+                list-style-type: disc;
+            }
+        }
+    }
+
+    section:last-of-type {
+        padding: 0 30px 15px 30px;
+    }
+
+    svg {
+        color: ${props => props.theme.red};
+        position: relative;
+        top: 1.2rem;
+        left: -0.6rem;
+        font-size: 1.2rem;
     }
 `
 
@@ -262,7 +355,7 @@ export const SectionTitle = styled.div`
         content: '';
         display: inline-block;
         position: relative;
-        top: 50%;
+        top: 0;
         right: -0.3rem;
         transform: translateY(15%);
         width: 4px;
@@ -278,24 +371,6 @@ export const SectionTitle = styled.div`
             50% {
                 opacity: 0;
             }
-        }
-    }
-`
-
-export const Skill = styled.li`
-    margin: 0.5rem 0;
-
-    .score-bar {
-        margin-top: 5px;
-        height: 8px;
-        width: 100%;
-        max-width: 250px;
-        border-radius: 2px;
-        background-color: ${props => props.theme.red}10;
-
-        > .score {
-            height: inherit;
-            background-color: ${props => props.theme.green}80;
         }
     }
 `
