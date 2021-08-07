@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
                     />
                 </S.Header>
                 {children}
-                <S.Footer>footer</S.Footer>
+                <S.Footer></S.Footer>
             </S.Wrapper>
         </ThemeProvider>
     )

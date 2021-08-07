@@ -312,15 +312,9 @@ export const ContentSection = styled.section`
             color: ${props => props.theme.red};
         }
 
-        .project {
-        }
-
-        .project-description {
-            font-weight: normal;
-        }
-
         > ul {
             margin: 16px;
+
             &.decimal {
                 list-style-type: decimal;
             }
