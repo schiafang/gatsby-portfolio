@@ -2,25 +2,25 @@ import { css, createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
     ${css`
+        html {
+            font-size: 14px;
+            @media ${props => props.theme.breakpoints.tablet} {
+                font-size: 16px;
+            }
+            @media ${props => props.theme.breakpoints.desktop} {
+                font-size: 18px;
+            }
+        }
         body {
-            margin: 0;
-            padding: 0;
-            font-weight: 400;
-            font-size: 16px;
             line-height: 1.56;
             letter-spacing: 0.9px;
-            color: ${props => props.theme.mainColor};
-            background: ${props => props.theme.mainBackground};
+            color: ${props => props.theme.primary};
+            background: ${props => props.theme.bg};
         }
-
         * {
             ::selection {
                 background: ${props => props.theme.green};
             }
-        }
-
-        #gatsby-focus-wrapper {
-            flex-grow: 1;
         }
     `}
 `

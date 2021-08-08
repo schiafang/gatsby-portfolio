@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
     height: 100%;
     font-family: 'Roboto', sans-serif;
     margin: 30px 0;
-    box-shadow: ${props => props.theme.mainColor}15 0px 5px 15px;
+    box-shadow: ${props => props.theme.primary}15 0px 5px 15px;
     border-radius: 4px;
 
     @media ${props => props.theme.breakpoints.tablet} {
@@ -22,8 +22,8 @@ export const Wrapper = styled.div`
 
 export const Info = styled.div`
     position: relative;
-    color: ${props => props.theme.mainColor};
-    background-color: ${props => props.theme.mainBackground}20;
+    color: ${props => props.theme.primary};
+    background-color: ${props => props.theme.bg}20;
     border-radius: 4px 4px 0 0;
     height: auto;
     padding: 2rem;
@@ -209,7 +209,7 @@ export const ContentWrapper = styled.div`
     width: 100%;
     padding: 30px;
     border-radius: 0 0 4px 4px;
-    border-top: 2px solid ${props => props.theme.lightBorder};
+    border-top: 2px solid ${props => props.theme.border};
     display: flex;
     flex-direction: column;
 
@@ -217,7 +217,7 @@ export const ContentWrapper = styled.div`
         height: 100%;
         grid-column: 2 / 3;
         border-top: none;
-        border-left: 2px solid ${props => props.theme.lightBorder};
+        border-left: 2px solid ${props => props.theme.border};
         border-radius: 0 4px 4px 0;
         padding: 0;
         display: grid;

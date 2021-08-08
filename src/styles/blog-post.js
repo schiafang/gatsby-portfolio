@@ -2,34 +2,88 @@ import styled from 'styled-components'
 
 export const PostMainContent = styled.main`
     margin: 1rem 0;
-    padding: 4rem 6rem;
-    background-color: ${({ theme }) => theme.mainBackground};
+    padding: 3rem 1rem;
+    color: ${props => props.theme.primary};
+    background-color: ${({ theme }) => theme.bg};
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco',
+        'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-    .post-date {
-        display: block;
-        color: #888;
-        text-align: right;
+    @media ${props => props.theme.breakpoints.tablet} {
+        padding: 3rem;
+    }
+
+    @media ${props => props.theme.breakpoints.desktop} {
+        padding: 4rem 6rem;
+    }
+
+    .back-icon {
+        color: ${props => props.theme.gray};
+        cursor: pointer;
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        transition: all 0.4s ease;
+        &:hover {
+            color: ${props => props.theme.green};
+            transform: scale(1.1);
+        }
+    }
+
+    .post-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        color: ${props => props.theme.grayLight};
         font-size: 0.85rem;
-        margin-bottom: 3rem;
+        margin: 1rem 0 3rem 0;
+
+        @media ${props => props.theme.breakpoints.tablet} {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        > span:nth-child(1) {
+            display: flex;
+            align-items: center;
+            .dot {
+                width: 3px;
+                height: 3px;
+                margin: 0 0.5rem;
+                display: inline-block;
+                border-radius: 50%;
+                background-color: ${props => props.theme.grayLight};
+            }
+        }
+
+        > div:nth-child(2) {
+            .post-tag {
+                display: inline-block;
+                width: fit-content;
+                padding: 0 5px;
+                margin-right: 0.5rem;
+            }
+        }
     }
-    .post-title {
-        color: ${props => props.theme.green};
+
+    .post-tag {
+        padding: 0 5px;
+        border-radius: 3px;
+        color: ${props => props.theme.primary};
+        background-color: ${props => props.theme.green}80;
     }
-    h1 {
-        font-size: 2em;
-        color: ${props => props.theme.mainColor};
-    }
+
     h2,
     h3,
     h4,
     h5,
     h6 {
         margin-top: 2rem;
-        color: ${props => props.theme.mainColor};
     }
     p {
-        line-height: 1.875rem;
         margin-top: 2rem;
+        line-height: 1.756;
+        letter-spacing: -0.003em;
     }
     a {
         text-decoration: underline;
@@ -44,12 +98,15 @@ export const PostMainContent = styled.main`
         text-decoration: line-through;
     }
     blockquote {
+        font-family: Merriweather, Georgia, serif;
+        font-size: 1.1rem;
+        color: ${props => props.theme.gray};
         border-left: 5px solid #ddd;
         margin: 30px 0;
     }
     blockquote p {
         font-style: italic;
-        padding: 10px 20px;
+        padding: 5px 20px;
     }
     ol,
     ul {
@@ -92,14 +149,10 @@ export const PostMainContent = styled.main`
     table,
     th,
     td {
-        border: 1px solid ${props => props.theme.mainColor}30;
+        border: 1px solid ${props => props.theme.primary}30;
     }
     th,
     td {
         padding: 0.5rem;
-    }
-
-    @media ${props => props.theme.breakpoints.mobile} {
-        padding: 3rem 1rem;
     }
 `

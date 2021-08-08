@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 html,
 body,
@@ -101,14 +102,29 @@ nav,
 section {
     display: block;
 }
-
-body {
-    line-height: 1;
-    font-size: 16px;
-    line-height: 1.5;
-    font-family: 'Chivo', sans-serif;
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+html {
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Chivo', sans-serif;
+}
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.5rem;
+}
+h3 {
+    font-size: 1.17rem;
+}
 ol,
 ul {
     list-style: none;

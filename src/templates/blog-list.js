@@ -13,35 +13,21 @@ const BlogListTemplate = ({ data, pageContext, ...props }) => {
                 const title = node.frontmatter.title
                 return (
                     <article key={node.id}>
-                        <header>
-                            <Link
-                                to={`/blog${node.fields.slug}`}
-                                className="title"
-                            >
-                                {title}
-                            </Link>
-                            {node.frontmatter.categories.map((item, index) => {
-                                return (
-                                    <span key={index} className="category-tag">
-                                        {item}
-                                    </span>
-                                )
-                            })}
-                            <div></div>
-                            <small className="date">
-                                {node.frontmatter.date}
-                            </small>
-                        </header>
-                        <section>
-                            <p
-                                className="excerpt"
-                                dangerouslySetInnerHTML={{
-                                    __html:
-                                        // node.frontmatter.description ||
-                                        node.excerpt,
-                                }}
-                            />
-                        </section>
+                        <Link to={`/blog${node.fields.slug}`} className="title">
+                            <header>
+                                <h2>{title}</h2>
+                            </header>
+                            <section>
+                                <p
+                                    className="excerpt"
+                                    dangerouslySetInnerHTML={{
+                                        __html:
+                                            node.frontmatter.description ||
+                                            node.excerpt,
+                                    }}
+                                />
+                            </section>
+                        </Link>
                     </article>
                 )
             })}
@@ -72,15 +58,18 @@ export const query = graphql`
                 node {
                     frontmatter {
                         title
-                        date(formatString: "MM/DD/YY")
+                        date(formatString: "MMMM YY")
                         description
                         categories
                     }
                     id
                     fields {
                         slug
+                        readingTime {
+                            text
+                        }
                     }
-                    excerpt(pruneLength: 1000)
+                    excerpt(pruneLength: 0)
                 }
             }
         }

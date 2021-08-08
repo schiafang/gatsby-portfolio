@@ -3,9 +3,29 @@ import styled from 'styled-components'
 export const PostListWrapper = styled.div`
     height: 100%;
     overflow: auto;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-top: 3rem;
+
+    @media ${props => props.theme.breakpoints.tablet} {
+        padding: 0 3rem;
+    }
+
+    @media ${props => props.theme.breakpoints.desktop} {
+        padding: 0 6rem;
+    }
 
     article {
-        margin: 3rem 0;
+        margin: 1.5rem 0;
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0s,
+            box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0s;
+        transform: translate3d(0px, 0px, 0px);
+        padding: 15px 20px;
+        border-radius: 6px;
+        background-color: ${props => props.theme.grayLight}10;
+
+        &:hover {
+            background-color: ${props => props.theme.grayLight}30;
+        }
     }
 
     header {
@@ -13,15 +33,15 @@ export const PostListWrapper = styled.div`
     }
 
     .title {
-        color: ${props => props.theme.mainColor};
-        font-size: 1.4rem;
+        color: ${props => props.theme.primary};
+        font-size: 0.8rem;
         text-decoration: none;
     }
 
     .category-tag {
         border-radius: 2px;
         font-size: 0.8rem;
-        color: ${props => props.theme.mainColor}90;
+        color: ${props => props.theme.primary}90;
         background-image: ${props => {
             const direction = '145deg'
             const color = props.theme.yellow
@@ -34,18 +54,10 @@ export const PostListWrapper = styled.div`
         margin: 0 5px;
     }
 
-    .date {
-        font-size: 0.7rem;
-        color: ${props => props.theme.red}95;
-    }
-
     .excerpt {
-        color: ${props => props.theme.mainColor}75;
+        font-size: 1rem;
+        color: ${props => props.theme.primary}75;
         word-wrap: break-word;
-    }
-
-    .page-link {
-        background-color: yellowgreen;
     }
 `
 
@@ -55,7 +67,7 @@ export const PostPageLink = styled.div`
 
     a {
         text-decoration: none;
-        color: ${props => props.theme.mainColor};
+        color: ${props => props.theme.primary};
         font-weight: 700;
         position: absolute;
         display: flex;
@@ -78,8 +90,8 @@ export const PostPageLink = styled.div`
             position: relative;
             top: 50%;
             transform: translateY(-50%);
-            border-top: 2px solid ${props => props.theme.mainColor};
-            border-right: 2px solid ${props => props.theme.mainColor};
+            border-top: 2px solid ${props => props.theme.primary};
+            border-right: 2px solid ${props => props.theme.primary};
         }
 
         &.pre-page::before {

@@ -50,7 +50,7 @@ export const Menus = styled.div`
     }
 
     .menu-items-mobile {
-        background-color: ${props => props.theme.mainColor};
+        background-color: ${props => props.theme.primary};
         position: fixed;
         width: 100vw;
         height: 100vh;
@@ -70,7 +70,7 @@ export const Menus = styled.div`
         }
 
         .slash {
-            color: ${props => props.theme.mainBackground};
+            color: ${props => props.theme.bg};
         }
 
         a {
@@ -87,7 +87,7 @@ export const Menus = styled.div`
         width: 35px;
         height: 35px;
         background-color: transparent;
-        border: 3px solid ${props => props.theme.mainBackground};
+        border: 3px solid ${props => props.theme.bg};
         border-radius: 10px;
         position: absolute;
         top: 5%;
@@ -154,7 +154,7 @@ export const Menus = styled.div`
         }
 
         .toggler-sun {
-            fill: ${props => props.theme.mainColor};
+            fill: ${props => props.theme.primary};
         }
     }
 
@@ -181,7 +181,7 @@ export const Menus = styled.div`
         .hamburger {
             width: 32px;
             height: 6px;
-            background-color: ${props => props.theme.mainColor};
+            background-color: ${props => props.theme.primary};
             border-radius: 3px;
             position: relative;
             top: 50%;

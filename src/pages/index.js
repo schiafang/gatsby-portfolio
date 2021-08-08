@@ -7,7 +7,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     height: 100%;
-    min-height: calc(100vh - 5rem);
+    min-height: calc(100vh - 120px);
 `
 
 const IndexPage = () => (
