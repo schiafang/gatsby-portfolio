@@ -1,14 +1,38 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import { PostMainContent } from '../styles/blog-post'
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
+import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons'
 
 const BlogPostTemplate = ({ data }) => {
     const post = data.markdownRemark
 
     return (
         <PostMainContent>
-            <h1 className="post-title">{post.frontmatter.title}</h1>
-            <span className="post-date">{post.frontmatter.date}</span>
+            <Icon
+                icon={faArrowAltCircleLeft}
+                className="back-icon"
+                onClick={() =>
+                    !window.previousPath ? navigate('/list/1') : navigate(-1)
+                }
+            />
+
+            <h1>{post.frontmatter.title}</h1>
+            <span className="post-info">
+                <span>
+                    {post.frontmatter.date} <span className="dot"></span>
+                    {post.fields.readingTime.text}
+                </span>
+                <div>
+                    {post.frontmatter.categories.map((item, index) => {
+                        return (
+                            <span key={index} className="post-tag">
+                                {item}
+                            </span>
+                        )
+                    })}
+                </div>
+            </span>
             <section dangerouslySetInnerHTML={{ __html: post.html }} />
         </PostMainContent>
     )
@@ -21,9 +45,14 @@ export const query = graphql`
             html
             frontmatter {
                 title
-                date(formatString: "MMMM DD, YYYY")
+                date(formatString: "MMMM DD YYYY")
                 description
                 categories
+            }
+            fields {
+                readingTime {
+                    text
+                }
             }
         }
     }

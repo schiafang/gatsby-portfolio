@@ -7,3 +7,7 @@ import 'prismjs/themes/prism-tomorrow.css'
 export const wrapRootElement = ({ element }) => {
     return <Layout>{element}</Layout>
 }
+
+export const onRouteUpdate = ({ prevLocation }) => {
+    window.previousPath = prevLocation ? prevLocation.pathname : null
+}
