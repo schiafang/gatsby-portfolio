@@ -35,7 +35,7 @@ const profileInfo = {
     brief:
         'Morbi tristique senectus et netus et. Cursus sit amet dictum sit amet justo donec enim. Volutpat est velit egestas dui id. Nibh sit amet commodo nulla facilisi nullam vehicula. Diam donec adipiscing tristique risus nec feugiat. ',
     location: 'Taipei, Taiwan',
-    email: '',
+    email: 'Adipisci@gmail.com',
     mobile: '',
     socialLink: {
         github: {
@@ -178,16 +178,20 @@ const AboutPage = () => {
                 </p>
                 <div className="contact-info">
                     <span>
-                        <a href={`mailto:${email}`} data-label="email">
-                            <Icon icon={faEnvelope} />
-                        </a>
-                        {email}
+                        {email && (
+                            <a href={`mailto:${email}`} data-label="email">
+                                <Icon icon={faEnvelope} />
+                                {email}
+                            </a>
+                        )}
                     </span>
                     <span>
-                        <a href={`tel:${mobile}`}>
-                            <Icon icon={faPhone} />
-                        </a>
-                        {mobile}
+                        {mobile && (
+                            <a href={`tel:${mobile}`}>
+                                <Icon icon={faPhone} />
+                                {mobile}
+                            </a>
+                        )}
                     </span>
                 </div>
 
@@ -204,7 +208,7 @@ const AboutPage = () => {
                         {skillsList.map((item, index) => {
                             return (
                                 <div key={index}>
-                                    <h3>{item.category}</h3>
+                                    <h4>{item.category}</h4>
                                     <ul>
                                         {item.list.map(
                                             (listItem, listIndex) => (
@@ -217,7 +221,6 @@ const AboutPage = () => {
                                 </div>
                             )
                         })}
-                        )
                     </S.ContentSection>
                 )}
                 {experienceList.length > 0 && (

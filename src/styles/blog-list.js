@@ -16,9 +16,6 @@ export const PostListWrapper = styled.div`
 
     article {
         margin: 1.5rem 0;
-        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0s,
-            box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0s;
-        transform: translate3d(0px, 0px, 0px);
         padding: 15px 20px;
         border-radius: 6px;
         background-color: ${props => props.theme.grayLight}10;

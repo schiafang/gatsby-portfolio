@@ -134,36 +134,30 @@ export const Info = styled.div`
         grid-area: contact;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
         margin: 15px 0 30px 0;
-        font-size: 0.75rem;
-
-        &::before {
-            content: '';
-            display: block;
-            width: 75%;
-            height: 50px;
-            position: absolute;
-            left: 0;
-            background-color: #44444410;
-            margin-top: -2px;
-            border-radius: 0 50px 50px 0;
-        }
+        font-size: 0.85rem;
 
         span {
             display: flex;
             align-items: center;
             gap: 0 5px;
+            font-size: 0.8rem;
+            color: ${props => props.theme.grayDark};
         }
 
-        a > svg {
-            color: ${props => (props.theme.isDarkMode ? '#bbb' : '#333')};
-            margin: 0 5px;
-            width: 12px;
-            height: 12px;
+        a {
+            color: ${props => props.theme.gray};
+            text-decoration: none;
+
+            svg {
+                margin-right: 10px;
+                width: 12px;
+                height: 12px;
+            }
 
             &:hover {
-                color: ${props => props.theme.red};
+                color: ${props => props.theme.green};
             }
         }
     }

@@ -12,10 +12,16 @@ export default createGlobalStyle`
             }
         }
         body {
-            line-height: 1.56;
+            line-height: 1.15;
             letter-spacing: 0.9px;
             color: ${props => props.theme.primary};
             background: ${props => props.theme.bg};
+            @media ${props => props.theme.breakpoints.tablet} {
+                line-height: 1.34;
+            }
+            @media ${props => props.theme.breakpoints.desktop} {
+                line-height: 1.56;
+            }
         }
         * {
             ::selection {
