@@ -15,29 +15,35 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     }
 }
 
-exports.createPages = ({ graphql, actions }) => {
-    const { createPage } = actions
+exports.createPages = async ({ graphql, actions }) => {
     const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
     const blogListTemplate = path.resolve(`./src/templates/blog-list.js`)
+    const tagPosts = path.resolve(`./src/templates/tag-posts.js`)
 
-    return graphql(`
-        {
-            allMarkdownRemark {
-                edges {
-                    node {
-                        id
-                        fields {
-                            slug
+    const { createPage } = actions
+    const perPageNum = 5
+
+    try {
+        const blogPostsQuery = await graphql(`
+            {
+                allMarkdownRemark {
+                    edges {
+                        node {
+                            id
+                            fields {
+                                slug
+                            }
                         }
                     }
                 }
             }
-        }
-    `).then(result => {
-        if (result.errors) throw result.errors
-        const posts = result.data.allMarkdownRemark.edges
+        `)
 
-        // Post pages
+        if (blogPostsQuery.errors) throw blogPostsQuery.errors
+
+        const posts = blogPostsQuery.data.allMarkdownRemark.edges
+
+        // Post page
         posts.forEach(({ node }) => {
             createPage({
                 path: `/blog${node.fields.slug}`,
@@ -49,13 +55,12 @@ exports.createPages = ({ graphql, actions }) => {
             })
         })
 
-        // Post list pages
-        const perPageNum = 5
+        // Posts pages
         const numOfPages = Math.ceil(posts.length / perPageNum)
 
         Array.from({ length: numOfPages }).forEach((_, i) => {
             createPage({
-                path: `list/${i + 1}`,
+                path: `tag/${i + 1}`,
                 component: blogListTemplate,
                 context: {
                     limit: perPageNum,
@@ -65,5 +70,52 @@ exports.createPages = ({ graphql, actions }) => {
                 },
             })
         })
-    })
+
+        // Tag posts pages
+        const tagPostsQuery = await graphql(`
+            {
+                allMarkdownRemark {
+                    nodes {
+                        frontmatter {
+                            tags
+                        }
+                    }
+                }
+            }
+        `)
+
+        if (tagPostsQuery.errors) throw tagPostsQuery.errors
+
+        const nodes = tagPostsQuery.data.allMarkdownRemark.nodes
+        const tagMap = new Map()
+
+        nodes.forEach(node => {
+            const nodeTags = node.frontmatter.tags
+            if (nodeTags) {
+                nodeTags.forEach(tag =>
+                    tagMap.set(tag, tagMap.has(tag) ? tagMap.get(tag) + 1 : 1)
+                )
+            }
+        })
+
+        tagMap.forEach((numOfNodes, tag) => {
+            const numOfTagPages = Math.ceil(numOfNodes / perPageNum)
+
+            Array.from({ length: numOfTagPages }).forEach((_, i) => {
+                createPage({
+                    path: `tag/${tag}/${i + 1}`,
+                    component: tagPosts,
+                    context: {
+                        limit: perPageNum,
+                        skip: i * perPageNum,
+                        numOfTagPages,
+                        currentPage: i + 1,
+                        targetTag: tag,
+                    },
+                })
+            })
+        })
+    } catch (error) {
+        console.warn(error)
+    }
 }
