@@ -8,15 +8,20 @@ export const Wrapper = styled.div`
     margin: 30px 0;
     box-shadow: ${props => props.theme.primary}15 0px 5px 15px;
     border-radius: 4px;
+    line-height: 1.56;
 
     @media ${props => props.theme.breakpoints.tablet} {
         margin: 30px 12%;
     }
 
     @media ${props => props.theme.breakpoints.desktop} {
+        padding: 30px 45px;
+    }
+
+    @media ${props => props.theme.breakpoints.wideScreen} {
         margin: 30px 0;
         display: grid;
-        grid-template-columns: minmax(300px, 30%) auto;
+        grid-template-columns: minmax(300px, 30%) auto auto;
     }
 `
 
@@ -37,7 +42,7 @@ export const Info = styled.div`
         'contact contact'
         'link link';
 
-    @media ${props => props.theme.breakpoints.desktop} {
+    @media ${props => props.theme.breakpoints.wideScreen} {
         grid-column: 1 / 2;
         border-radius: 4px 0 0 4px;
         grid-template-columns: auto;
@@ -66,7 +71,7 @@ export const Info = styled.div`
             object-position: 60% 30%;
         }
 
-        @media ${props => props.theme.breakpoints.desktop} {
+        @media ${props => props.theme.breakpoints.wideScreen} {
             justify-self: center;
             border-radius: 37% 42% 39% 43%;
             width: 100px;
@@ -89,7 +94,7 @@ export const Info = styled.div`
             /* color: #666; */
         }
 
-        @media ${props => props.theme.breakpoints.desktop} {
+        @media ${props => props.theme.breakpoints.wideScreen} {
             justify-self: center;
         }
     }
@@ -100,7 +105,7 @@ export const Info = styled.div`
         font-size: 0.9rem;
         font-size: 0.9em;
 
-        @media ${props => props.theme.breakpoints.desktop} {
+        @media ${props => props.theme.breakpoints.wideScreen} {
             justify-self: center;
         }
     }
@@ -207,7 +212,7 @@ export const ContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
 
-    @media ${props => props.theme.breakpoints.desktop} {
+    @media ${props => props.theme.breakpoints.wideScreen} {
         height: 100%;
         grid-column: 2 / 3;
         border-top: none;
@@ -231,10 +236,15 @@ export const ContentSection = styled.section`
 
         > div:not(:first-child) {
             margin: 15px 0;
-        }
 
-        > h4 {
-            margin: 1.5rem 0 0.5rem 0;
+            h4 {
+                margin: 0 0 0.5rem 0;
+            }
+
+            ul {
+                font-size: 0.8rem;
+                line-height: 1.74;
+            }
         }
     }
 
@@ -254,7 +264,7 @@ export const ContentSection = styled.section`
         }
     }
 
-    @media ${props => props.theme.breakpoints.desktop} {
+    @media ${props => props.theme.breakpoints.wideScreen} {
         padding: 2rem;
         grid-row: 1 / 2;
         margin-bottom: 0;
@@ -268,7 +278,6 @@ export const ContentSection = styled.section`
         &.skills {
             display: block;
             grid-column: 2 / span 1;
-            /* background-color: rgba(255, 255, 255, 0.2); */
             white-space: nowrap;
         }
     }
@@ -301,13 +310,46 @@ export const ContentSection = styled.section`
             z-index: -1;
         }
 
+        .organization {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
         .period {
+            font-size: 0.85rem;
+            font-weight: 400;
             margin-bottom: 0.5rem;
             color: ${props => props.theme.red};
         }
 
+        .project {
+            display: block;
+            color: #437c90;
+            font-weight: 600;
+            margin: 2rem 0 0.4rem 0;
+        }
+
+        .description {
+            color: #888;
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+        }
+
+        .skills {
+            font-weight: 400;
+            background-image: ${props =>
+                props.theme.isDarkMode
+                    ? 'linear-gradient(120deg, #eee4c150, #f8e4a150)'
+                    : 'linear-gradient(120deg, #eee4c1, #f8e4a1)'};
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            padding: 0 5px;
+        }
+
         > ul {
-            margin: 16px;
+            margin: 0.5rem 1.5rem;
+            font-size: 0.8rem;
 
             &.decimal {
                 list-style-type: decimal;

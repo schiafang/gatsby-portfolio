@@ -6,6 +6,7 @@ export const baseTheme = {
         mobile: 'screen and (max-width: 768px)',
         tablet: 'screen and (min-width: 768px)',
         desktop: 'screen and (min-width: 1040px)',
+        wideScreen: 'screen and (min-width: 1600px)',
     },
 }
 
