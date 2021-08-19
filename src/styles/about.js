@@ -5,17 +5,18 @@ export const Wrapper = styled.div`
     flex-direction: column;
     height: 100%;
     font-family: 'Roboto', sans-serif;
-    margin: 30px 0;
-    box-shadow: ${props => props.theme.primary}15 0px 5px 15px;
+    margin: 60px 0;
+    box-shadow: ${props => props.theme.primary}25 1px 1px 4px;
     border-radius: 4px;
     line-height: 1.56;
+    letter-spacing: 1.2px;
 
     @media ${props => props.theme.breakpoints.tablet} {
-        margin: 30px 12%;
+        margin: 60px 12%;
     }
 
     @media ${props => props.theme.breakpoints.desktop} {
-        padding: 30px 45px;
+        padding: 60px 45px;
     }
 
     @media ${props => props.theme.breakpoints.wideScreen} {
@@ -58,7 +59,7 @@ export const Info = styled.div`
 
     .thumbnail {
         grid-area: avatar;
-        background-color: ${props => props.theme.yellow}75;
+        background-color: #eeda95;
         width: 80px;
         height: 80px;
         border-radius: 50% 50% 50% 15px;
@@ -112,10 +113,10 @@ export const Info = styled.div`
 
     .brief {
         grid-area: brief;
-        margin: 1rem 0;
+        margin: 2rem 0 1rem 0;
         padding: 0.5rem 1rem;
         margin-bottom: 2rem;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         position: relative;
         height: fit-content;
 

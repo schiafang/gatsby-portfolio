@@ -18,6 +18,10 @@ const menuLinks = [
         linkTitle: 'RESUME',
         path: '/about',
     },
+    {
+        linkTitle: 'WORK',
+        path: '/work',
+    },
 ]
 
 const NavMenus = ({ isDark, setIsDark }) => {
@@ -101,6 +105,8 @@ const NavMenus = ({ isDark, setIsDark }) => {
                     <Link to="/list/1">ARTICLE</Link>
                     <span className="slash">/</span>
                     <Link to="/about">RESUME</Link>
+                    <span className="slash">/</span>
+                    <Link to="/work">WORK</Link>
                 </div>
             )}
         </S.Menus>

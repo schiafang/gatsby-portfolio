@@ -48,6 +48,8 @@ export const PostListWrapper = styled.div`
         padding: 15px 20px;
         border-radius: 6px;
         background-color: ${props => props.theme.grayLight}10;
+        letter-spacing: 1.3px;
+        line-height: 1.4;
 
         &:hover {
             background-color: ${props => props.theme.grayLight}30;
@@ -62,22 +64,6 @@ export const PostListWrapper = styled.div`
         color: ${props => props.theme.primary};
         font-size: 0.8rem;
         text-decoration: none;
-    }
-
-    .category-tag {
-        border-radius: 2px;
-        font-size: 0.8rem;
-        color: ${props => props.theme.primary}90;
-        background-image: ${props => {
-            const direction = '145deg'
-            const color = props.theme.yellow
-            return `linear-gradient(${direction}, ${color}70,  ${color}30)`
-        }};
-        background-repeat: no-repeat;
-        background-size: 100% 0.45em;
-        background-position: 0 88%;
-        padding: 0 3px;
-        margin: 0 5px;
     }
 
     .excerpt {

@@ -8,6 +8,8 @@ const Wrapper = styled.div`
     justify-content: center;
     height: 100%;
     min-height: calc(100vh - 120px);
+    line-height: 1.62;
+    letter-spacing: 1.2px;
 `
 
 const IndexPage = () => (
@@ -15,8 +17,8 @@ const IndexPage = () => (
         <Seo title="CAREY" />
         <div>
             <h1>Hi, there</h1>
-            <p>Welcome to your new Gatsby site.</p>
-            <p>Now go build something great.</p>
+            <p>Aliquam faucibus in tincidunt eget tempor.</p>
+            <p>Consectetur donec sapien faucibus et molestie.</p>
         </div>
     </Wrapper>
 )

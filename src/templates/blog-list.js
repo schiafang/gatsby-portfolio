@@ -2,10 +2,9 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { PostListWrapper, PostPageLink } from '../styles/blog-list'
 
-const BlogListTemplate = ({ data, pageContext, ...props }) => {
+const BlogListTemplate = ({ data, pageContext }) => {
     const posts = data.allMarkdownRemark.edges
     const { currentPage, numOfPages } = pageContext
-    console.log({ posts })
 
     return (
         <PostListWrapper>
@@ -69,7 +68,7 @@ export const query = graphql`
                             text
                         }
                     }
-                    excerpt(pruneLength: 0)
+                    excerpt(pruneLength: 150)
                 }
             }
         }

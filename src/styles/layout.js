@@ -215,4 +215,21 @@ export const Menus = styled.div`
     }
 `
 
-export const Footer = styled.footer``
+export const Footer = styled.footer`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 30px 0;
+    font-size: 0.85rem;
+
+    a {
+        font-size: 1.3rem;
+        color: ${props => props.theme.primary};
+        opacity: 0.6;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+`
