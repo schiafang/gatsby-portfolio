@@ -14,6 +14,35 @@ export const PostListWrapper = styled.div`
         padding: 0 6rem;
     }
 
+    .target-tag-result {
+        font-size: 1.2rem;
+        margin: 0 5px 45px 0;
+        font-weight: 600;
+        color: ${props => props.theme.gray};
+        display: inline-block;
+
+        &::after {
+            display: inherit;
+            color: inherit;
+            content: '';
+            margin: 0 0.8rem;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 6px 0 6px 8px;
+            border-color: transparent transparent transparent
+                ${props => props.theme.gray};
+            position: relative;
+            transform: translateX(50%);
+        }
+
+        + span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: ${props => props.theme.red};
+        }
+    }
+
     article {
         margin: 1.5rem 0;
         padding: 15px 20px;

@@ -60,7 +60,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
         Array.from({ length: numOfPages }).forEach((_, i) => {
             createPage({
-                path: `tag/${i + 1}`,
+                path: `list/${i + 1}`,
                 component: blogListTemplate,
                 context: {
                     limit: perPageNum,
@@ -103,14 +103,14 @@ exports.createPages = async ({ graphql, actions }) => {
 
             Array.from({ length: numOfTagPages }).forEach((_, i) => {
                 createPage({
-                    path: `tag/${tag}/${i + 1}`,
+                    path: `tag/${tag.toLowerCase()}/${i + 1}`,
                     component: tagPosts,
                     context: {
                         limit: perPageNum,
                         skip: i * perPageNum,
                         numOfTagPages,
                         currentPage: i + 1,
-                        targetTag: tag,
+                        tag,
                     },
                 })
             })
