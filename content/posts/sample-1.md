@@ -1,9 +1,13 @@
 ---
 title: 'Sample'
-date: '2020-07-27T07:26:03.284Z'
+date: '2020-08-28T07:26:03.284Z'
 description: 'Nunc congue nisi vitae suscipit tellus mauris a diam. At erat pellentesque adipiscing commodo elit at imperdiet.'
-categories: ['Javascript', 'CSS']
 comments: true
+tags:
+    - Javascript
+    - CSS
+    - HTML
+    - React
 ---
 
 # Heading 1
