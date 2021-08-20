@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
             <GlobalStyle theme={theme} />
             <S.Wrapper>
                 <S.Header>
-                    <Link to="/">
+                    <Link>
                         <h3>{data.site.siteMetadata?.title} </h3>
                     </Link>
                     <NavMenus
