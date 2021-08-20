@@ -6,11 +6,11 @@ export const PostListWrapper = styled.div`
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin-top: 3rem;
 
-    @media ${props => props.theme.breakpoints.tablet} {
+    @media screen and (min-width: 768px) {
         padding: 0 3rem;
     }
 
-    @media ${props => props.theme.breakpoints.desktop} {
+    @media screen and (min-width: 1040px) {
         padding: 0 6rem;
     }
 

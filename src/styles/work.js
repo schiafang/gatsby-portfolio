@@ -57,13 +57,13 @@ export const Wrapper = styled.div`
         }
     }
 
-    @media ${props => props.theme.breakpoints.desktop} {
+    @media screen and (min-width: 1040px) {
         section .project-introduction {
             padding: 0 5rem;
         }
     }
 
-    @media ${props => props.theme.breakpoints.wideScreen} {
+    @media screen and (min-width: 1600px) {
         section .project-introduction {
             padding: 0 7rem;
         }

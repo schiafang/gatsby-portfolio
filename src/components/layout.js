@@ -27,11 +27,9 @@ const Layout = ({ children }) => {
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyle theme={theme} />
-            <S.Wrapper>
+            <S.LayoutWrapper>
                 <S.Header>
-                    <Link>
-                        <h3>{data.site.siteMetadata?.title} </h3>
-                    </Link>
+                    <h3>{data.site.siteMetadata?.title}</h3>
                     <NavMenus
                         isDark={isDark}
                         setIsDark={() => setIsDark(pre => !pre)}
@@ -50,7 +48,7 @@ const Layout = ({ children }) => {
                         <Icon icon={faLinkedinIn} />
                     </a>
                 </S.Footer>
-            </S.Wrapper>
+            </S.LayoutWrapper>
         </ThemeProvider>
     )
 }

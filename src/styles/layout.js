@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
+export const LayoutWrapper = styled.div`
+    background-color: black;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -9,11 +11,11 @@ export const Wrapper = styled.div`
     padding: 1rem;
     overflow: hidden;
 
-    @media ${props => props.theme.breakpoints.tablet} {
+    @media screen and (min-width: 768px) {
         padding: 1rem 2rem;
     }
 
-    @media ${props => props.theme.breakpoints.desktop} {
+    @media screen and (min-width: 1040px) {
         padding: 1rem 7.5rem;
     }
 `
@@ -30,8 +32,9 @@ export const Header = styled.header`
         color: inherit;
     }
 
-    @media ${props => props.theme.breakpoints.mobile} {
+    @media screen and (max-width: 768px) {
         padding: 0;
+        background-color: bisque;
     }
 `
 

@@ -8,11 +8,11 @@ export const PostMainContent = styled.main`
     font-family: -apple-system, BlinkMacSystemFont, 'San Francisco',
         'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-    @media ${props => props.theme.breakpoints.tablet} {
+    @media screen and (min-width: 768px) {
         padding: 3rem;
     }
 
-    @media ${props => props.theme.breakpoints.desktop} {
+    @media screen and (min-width: 1040px) {
         padding: 4rem 6rem;
     }
 
@@ -36,7 +36,7 @@ export const PostMainContent = styled.main`
         font-size: 0.85rem;
         margin: 1rem 0 3rem 0;
 
-        @media ${props => props.theme.breakpoints.tablet} {
+        @media screen and (min-width: 768px) {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -46,6 +46,7 @@ export const PostMainContent = styled.main`
         > span:nth-child(1) {
             display: flex;
             align-items: center;
+
             .dot {
                 width: 3px;
                 height: 3px;

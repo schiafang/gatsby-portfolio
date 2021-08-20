@@ -11,15 +11,15 @@ export const Wrapper = styled.div`
     line-height: 1.56;
     letter-spacing: 1.2px;
 
-    @media ${props => props.theme.breakpoints.tablet} {
+    @media screen and (min-width: 768px) {
         margin: 60px 12%;
     }
 
-    @media ${props => props.theme.breakpoints.desktop} {
+    @media screen and (min-width: 1040px) {
         padding: 60px 45px;
     }
 
-    @media ${props => props.theme.breakpoints.wideScreen} {
+    @media screen and (min-width: 1600px) {
         margin: 30px 0;
         display: grid;
         grid-template-columns: minmax(300px, 30%) auto auto;
@@ -43,7 +43,7 @@ export const Info = styled.div`
         'contact contact'
         'link link';
 
-    @media ${props => props.theme.breakpoints.wideScreen} {
+    @media screen and (min-width: 1600px) {
         grid-column: 1 / 2;
         border-radius: 4px 0 0 4px;
         grid-template-columns: auto;
@@ -72,7 +72,7 @@ export const Info = styled.div`
             object-position: 60% 30%;
         }
 
-        @media ${props => props.theme.breakpoints.wideScreen} {
+        @media screen and (min-width: 1600px) {
             justify-self: center;
             border-radius: 37% 42% 39% 43%;
             width: 100px;
@@ -95,7 +95,7 @@ export const Info = styled.div`
             /* color: #666; */
         }
 
-        @media ${props => props.theme.breakpoints.wideScreen} {
+        @media screen and (min-width: 1600px) {
             justify-self: center;
         }
     }
@@ -106,7 +106,7 @@ export const Info = styled.div`
         font-size: 0.9rem;
         font-size: 0.9em;
 
-        @media ${props => props.theme.breakpoints.wideScreen} {
+        @media screen and (min-width: 1600px) {
             justify-self: center;
         }
     }
@@ -213,7 +213,7 @@ export const ContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
 
-    @media ${props => props.theme.breakpoints.wideScreen} {
+    @media screen and (min-width: 1600px) {
         height: 100%;
         grid-column: 2 / 3;
         border-top: none;
@@ -249,7 +249,7 @@ export const ContentSection = styled.section`
         }
     }
 
-    @media ${props => props.theme.breakpoints.tablet} {
+    @media screen and (min-width: 768px) {
         &.skills {
             flex-direction: row;
             flex-wrap: wrap;
@@ -265,7 +265,7 @@ export const ContentSection = styled.section`
         }
     }
 
-    @media ${props => props.theme.breakpoints.wideScreen} {
+    @media screen and (min-width: 1600px) {
         padding: 2rem;
         grid-row: 1 / 2;
         margin-bottom: 0;
