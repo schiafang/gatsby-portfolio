@@ -4,42 +4,56 @@ export const PostListWrapper = styled.div`
     height: 100%;
     overflow: auto;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin-top: 3rem;
+    margin: 1rem 0;
+    padding: 3rem 1rem;
 
     @media screen and (min-width: 768px) {
-        padding: 0 3rem;
+        padding: 3rem;
     }
 
     @media screen and (min-width: 1040px) {
-        padding: 0 6rem;
+        padding: 4rem 6rem;
+    }
+
+    .back-icon {
+        display: block;
+        color: ${props => props.theme.gray};
+        cursor: pointer;
+        font-size: 1.6rem;
+        transition: all 0.4s ease;
+        margin-bottom: 1rem;
+
+        &:hover {
+            color: ${props => props.theme.green};
+            transform: scale(1.1);
+        }
     }
 
     .target-tag-result {
-        font-size: 1.2rem;
-        margin: 0 5px 45px 0;
+        font-size: 2rem;
+        margin: 0 5px 30px 0;
         font-weight: 600;
-        color: ${props => props.theme.gray};
         display: inline-block;
 
         &::after {
             display: inherit;
             color: inherit;
             content: '';
-            margin: 0 0.8rem;
+            margin: 0 1rem 0 0.8rem;
             width: 0;
             height: 0;
             border-style: solid;
-            border-width: 6px 0 6px 8px;
+            border-width: 8px 0 8px 10px;
             border-color: transparent transparent transparent
-                ${props => props.theme.gray};
+                ${props => props.theme.primary};
             position: relative;
             transform: translateX(50%);
         }
 
         + span {
-            font-size: 1.2rem;
+            font-size: 2rem;
             font-weight: 600;
-            color: ${props => props.theme.red};
+            color: ${props => props.theme.green};
         }
     }
 

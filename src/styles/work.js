@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
         margin-bottom: 100px;
 
         .project-introduction {
-            padding: 0 3.5rem;
+            padding: 0 15px;
             font-size: 0.9rem;
 
             > h2 {

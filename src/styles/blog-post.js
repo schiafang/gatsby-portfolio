@@ -31,7 +31,6 @@ export const PostMainContent = styled.main`
     .post-info {
         display: flex;
         flex-direction: column;
-        gap: 8px;
         color: ${props => props.theme.grayLight};
         font-size: 0.85rem;
         margin: 1rem 0 3rem 0;
@@ -41,6 +40,10 @@ export const PostMainContent = styled.main`
             flex-direction: row;
             align-items: center;
             justify-content: flex-start;
+        }
+
+        > * {
+            margin: 5px 0;
         }
 
         > span:nth-child(1) {
