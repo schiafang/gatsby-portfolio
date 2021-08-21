@@ -19,9 +19,18 @@ export const Wrapper = styled.div`
             font-size: 0.9rem;
 
             > h2 {
+                font-size: 1.3rem;
                 margin: 1rem 0;
                 display: flex;
                 justify-content: space-between;
+
+                @media screen and (min-width: 768px) {
+                    font-size: 1.4rem;
+                }
+
+                @media screen and (min-width: 1040px) {
+                    font-size: 1.5rem;
+                }
             }
 
             > h2 a {

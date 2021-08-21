@@ -4,9 +4,11 @@ export default createGlobalStyle`
     ${css`
         html {
             font-size: 14px;
+
             @media screen and (min-width: 768px) {
                 font-size: 16px;
             }
+
             @media screen and (min-width: 1040px) {
                 font-size: 18px;
             }
@@ -16,9 +18,11 @@ export default createGlobalStyle`
             letter-spacing: 0.9px;
             color: ${props => props.theme.primary};
             background: ${props => props.theme.bg};
+
             @media screen and (min-width: 768px) {
                 line-height: 1.34;
             }
+
             @media screen and (min-width: 1040px) {
                 line-height: 1.56;
             }
@@ -28,7 +32,7 @@ export default createGlobalStyle`
                 background: ${props => props.theme.green};
             }
         }
-        #gatsby-focus-wrapper {
+        #___gatsby > div {
             width: 100%;
             height: auto;
             display: flex;

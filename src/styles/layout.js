@@ -1,25 +1,5 @@
 import styled from 'styled-components'
 
-export const LayoutWrapper = styled.div`
-    background-color: black;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    max-width: 100vw;
-    min-height: 100vh;
-    padding: 1rem;
-    overflow: hidden;
-
-    @media screen and (min-width: 768px) {
-        padding: 1rem 2rem;
-    }
-
-    @media screen and (min-width: 1040px) {
-        padding: 1rem 7.5rem;
-    }
-`
-
 export const Header = styled.header`
     display: flex;
     align-items: stretch;
@@ -34,7 +14,6 @@ export const Header = styled.header`
 
     @media screen and (max-width: 768px) {
         padding: 0;
-        background-color: bisque;
     }
 `
 
@@ -66,7 +45,10 @@ export const Menus = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 30px;
+
+        > * {
+            margin-bottom: 30px;
+        }
 
         &.active {
             transform: translateX(0);
@@ -97,18 +79,19 @@ export const Menus = styled.div`
         right: 10%;
         cursor: pointer;
         transition: all ease 0.3s;
+        transform: scale(0.9);
 
         &:hover {
-            transform: scale(1.2);
+            transform: scale(1);
             border-radius: 50%;
             animation: rotate 0.5s ease-in;
 
             @keyframes rotate {
                 0% {
-                    transform: scale(1.2) rotate(0deg);
+                    transform: scale(1) rotate(0deg);
                 }
                 100% {
-                    transform: scale(1.2) rotate(90deg);
+                    transform: scale(1) rotate(90deg);
                 }
             }
         }
@@ -165,6 +148,7 @@ export const Menus = styled.div`
         display: block;
         width: 32px;
         height: 100%;
+        transform: scale(0.85);
 
         input {
             display: none;
@@ -222,9 +206,12 @@ export const Footer = styled.footer`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
     padding: 30px 0;
     font-size: 0.85rem;
+
+    > * {
+        padding: 0 10px;
+    }
 
     a {
         font-size: 1.3rem;

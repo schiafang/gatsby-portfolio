@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     flex-direction: column;
     height: 100%;
     font-family: 'Roboto', sans-serif;
-    margin: 60px 0;
+    margin: 30px 0;
     box-shadow: ${props => props.theme.primary}25 1px 1px 4px;
     border-radius: 4px;
     line-height: 1.56;
@@ -85,10 +85,10 @@ export const Info = styled.div`
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        gap: 0 0.8rem;
 
         > :nth-child(1) {
             word-spacing: 0.4rem;
+            margin-right: 0.8rem;
         }
 
         > :nth-child(2) {
@@ -123,15 +123,16 @@ export const Info = styled.div`
         svg {
             position: absolute;
             transform: scale(0.8);
+            opacity: 0.5;
         }
 
         > svg:nth-child(1) {
-            left: -15px;
+            left: -5px;
             top: 0;
         }
 
         > svg:nth-child(2) {
-            right: -15px;
+            right: -5px;
             bottom: 0;
         }
     }
@@ -140,16 +141,15 @@ export const Info = styled.div`
         grid-area: contact;
         display: flex;
         flex-direction: column;
-        gap: 15px;
         margin: 15px 0 30px 0;
         font-size: 0.85rem;
 
         span {
             display: flex;
             align-items: center;
-            gap: 0 5px;
             font-size: 0.8rem;
             color: ${props => props.theme.grayDark};
+            margin-bottom: 0.5rem;
         }
 
         a {
@@ -173,7 +173,10 @@ export const Info = styled.div`
         width: 100%;
         display: flex;
         justify-content: flex-end;
-        gap: 0 12px;
+
+        > a {
+            margin: 0 8px;
+        }
 
         a svg {
             width: 16px;
@@ -197,11 +200,6 @@ export const Info = styled.div`
         a[data-label='twitter'] svg {
             color: #1da1f2;
         }
-
-        a[data-label='instagram'] svg {
-            color: #1da1f2;
-            margin-top: 3px;
-        }
     }
 `
 
@@ -222,7 +220,6 @@ export const ContentWrapper = styled.div`
         padding: 0;
         display: grid;
         grid-template-columns: 1fr auto;
-        gap: 0 5px;
     }
 `
 
@@ -284,7 +281,7 @@ export const ContentSection = styled.section`
     }
 
     .section-item {
-        padding: 0 30px 60px 30px;
+        padding: 0 0 60px 30px;
         position: relative;
 
         &::before {

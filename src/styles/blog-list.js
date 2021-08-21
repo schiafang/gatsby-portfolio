@@ -83,7 +83,6 @@ export const PostPageLink = styled.div`
         font-weight: 700;
         position: absolute;
         display: flex;
-        gap: 10px;
         align-items: center;
         justify-content: space-between;
         padding: 0 10px;
@@ -104,6 +103,7 @@ export const PostPageLink = styled.div`
             transform: translateY(-50%);
             border-top: 2px solid ${props => props.theme.primary};
             border-right: 2px solid ${props => props.theme.primary};
+            margin: 0 10px;
         }
 
         &.pre-page::before {

@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyle theme={theme} />
-            <S.LayoutWrapper>
+            <div>
                 <S.Header>
                     <h3>{data.site.siteMetadata?.title}</h3>
                     <NavMenus
@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
                         setIsDark={() => setIsDark(pre => !pre)}
                     />
                 </S.Header>
-                {children}
+                <main> {children}</main>
                 <S.Footer>
                     <p>2021 CAREY SUNG</p>
                     <a href="https://github.com/schiafang" target="_blank">
@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
                         <Icon icon={faLinkedinIn} />
                     </a>
                 </S.Footer>
-            </S.LayoutWrapper>
+            </div>
         </ThemeProvider>
     )
 }

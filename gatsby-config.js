@@ -1,5 +1,3 @@
-// const { lightTheme, darkTheme } = require(`${__dirname}/src/themes/theme.js`)
-
 module.exports = {
     siteMetadata: {
         title: `S. CHIAFANG`,
