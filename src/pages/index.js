@@ -1,7 +1,6 @@
 import React from 'react'
 import Seo from '../components/seo'
 import styled from 'styled-components'
-import Identity from '../components/identity'
 
 const Wrapper = styled.div`
     display: flex;
@@ -16,7 +15,6 @@ const Wrapper = styled.div`
 const IndexPage = () => (
     <Wrapper>
         <Seo title="CAREY" />
-        <Identity />
         <div>
             <h1>Hi, there</h1>
             <p>Aliquam faucibus in tincidunt eget tempor.</p>
