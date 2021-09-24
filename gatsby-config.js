@@ -11,6 +11,7 @@ module.exports = {
         `gatsby-plugin-sharp`,
         `gatsby-plugin-fontawesome-css`,
         `gatsby-plugin-netlify-cms`,
+        `gatsby-plugin-netlify-identity-widget`,
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
