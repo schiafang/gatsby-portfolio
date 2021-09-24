@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import { ThemeProvider } from 'styled-components'
@@ -9,6 +9,7 @@ import { darkTheme, lightTheme } from '../themes/theme'
 import * as S from '../styles/layout'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import netlifyIdentity from 'netlify-identity-widget'
 
 const Layout = ({ children }) => {
     const [isDark, setIsDark] = useState(false)
@@ -24,6 +25,10 @@ const Layout = ({ children }) => {
         }
     `)
 
+    useEffect(() => {
+        netlifyIdentity.init({})
+    }, [])
+
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyle theme={theme} />
@@ -37,6 +42,12 @@ const Layout = ({ children }) => {
                 </S.Header>
                 <main> {children}</main>
                 <S.Footer>
+                    <span
+                        className="admin-btn"
+                        onClick={() => netlifyIdentity.open()}
+                    >
+                        Admin
+                    </span>
                     <p>2021 CAREY SUNG</p>
                     <a href="https://github.com/schiafang" target="_blank">
                         <Icon icon={faGithub} />

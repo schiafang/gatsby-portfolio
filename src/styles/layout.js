@@ -222,4 +222,15 @@ export const Footer = styled.footer`
             opacity: 1;
         }
     }
+
+    .admin-btn {
+        font-size: 0.8rem;
+        cursor: pointer;
+        color: ${props => props.theme.grayLight};
+        opacity: 0.6;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
 `
