@@ -1,11 +1,11 @@
 ---
-title: 'Pharetra magna ac placerat vestibulum lectus mauris. Elit ullamcorper'
-date: '2020-07-27T07:26:03.284Z'
-description: 'Molestie a iaculis at erat pellentesque adipiscing commodo.'
+title: "Edit: Pharetra magna ac placerat vestibulum lectus mauris. Elit ullamcorper"
+date: 2020-07-27T07:26:03.284Z
+description: Molestie a iaculis at erat pellentesque adipiscing commodo.
 comments: true
 tags:
-    - Javascript
-    - React
+  - Javascript
+  - React
 ---
 
 Vitae sapien pellentesque habitant morbi tristique senectus et. Faucibus nisl tincidunt eget nullam non nisi. Consequat mauris nunc congue nisi vitae. Vel facilisis volutpat est velit egestas dui id ornare. Blandit libero volutpat sed cras ornare. Habitasse platea dictumst quisque sagittis. Sed pulvinar proin gravida hendrerit lectus. Convallis aenean et tortor at risus viverra adipiscing. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. Consectetur adipiscing elit duis tristique sollicitudin nibh. Molestie ac feugiat sed lectus vestibulum. Eget mauris pharetra et ultrices neque ornare aenean. Penatibus et magnis dis parturient.
