@@ -6,7 +6,7 @@ import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons'
 
 const BlogPostTemplate = ({ data }) => {
     const post = data.markdownRemark
-    console.log(`post`, post)
+
     return (
         <PostMainContent>
             <Icon
@@ -25,7 +25,6 @@ const BlogPostTemplate = ({ data }) => {
                 </span>
                 <div>
                     {post.frontmatter.tags.map((item, index) => {
-                        console.log(`item`, item)
                         return (
                             <Link
                                 key={index}

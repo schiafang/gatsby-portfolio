@@ -49,6 +49,7 @@ export const PostMainContent = styled.main`
         > span:nth-child(1) {
             display: flex;
             align-items: center;
+            margin-right: 0.5rem;
 
             .dot {
                 width: 3px;
