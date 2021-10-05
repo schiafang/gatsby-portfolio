@@ -9,10 +9,11 @@ module.exports = {
     plugins: [
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-image`,
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
         `gatsby-plugin-fontawesome-css`,
         `gatsby-plugin-netlify-cms`,
+        `gatsby-plugin-gatsby-cloud`,
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
@@ -25,11 +26,11 @@ module.exports = {
                 icon: `src/images/icon.svg`, // This path is relative to the root of the site.
             },
         },
-        `gatsby-plugin-gatsby-cloud`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `posts`,
+                // path: `${__dirname}/content/posts`,
                 path: path.resolve(__dirname, '../content/posts'),
             },
         },
@@ -38,6 +39,21 @@ module.exports = {
             options: {
                 plugins: [
                     `gatsby-remark-reading-time`,
+                    {
+                        resolve: `gatsby-remark-images-anywhere`,
+                        options: {
+                            staticDir: `static`,
+                            createMarkup: ({ src, srcSet }) =>
+                                `<img src="${src}" srcSet="${srcSet}" class="hey" />`,
+                            loading: 'lazy',
+                            backgroundColor: 'transparent',
+                            linkImagesToOriginal: true,
+                            wrapperStyle: 'padding-bottom: 0.5rem;',
+                            sharpMethod: 'fluid',
+                            maxWidth: 650,
+                            quality: 50,
+                        },
+                    },
                     {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
