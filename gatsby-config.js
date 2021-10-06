@@ -42,7 +42,8 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-images-anywhere`,
                         options: {
-                            staticDir: `static`,
+                            // staticDir: `static`,
+                            staticDir: path.resolve(__dirname, `static`),
                             createMarkup: ({ src, srcSet }) =>
                                 `<img src="${src}" srcSet="${srcSet}" class="hey" />`,
                             loading: 'lazy',
