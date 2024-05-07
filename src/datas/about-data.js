@@ -16,7 +16,7 @@ export const profileInfo = {
 `,
     location: 'Hsinchu, Taiwan / Remote',
     email: 'schiafang@gmail.com',
-    mobile: '+886 976-216-703',
+    mobile: '',
     socialLink: {
         github: {
             link: 'https://github.com/schiafang',
