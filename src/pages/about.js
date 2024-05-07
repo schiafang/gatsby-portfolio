@@ -10,6 +10,8 @@ import {
     faEnvelope,
     faPhone,
     faRocket,
+    faLink,
+    faLocationArrow,
 } from '@fortawesome/free-solid-svg-icons'
 
 function formatFullname(lastName, firstName) {
@@ -30,6 +32,7 @@ const AboutPage = () => {
         brief,
         email,
         mobile,
+        location,
     } = profileInfo
 
     const SocialLink = () => {
@@ -90,6 +93,14 @@ const AboutPage = () => {
                             </a>
                         )}
                     </span>
+                    <span>
+                        {location && (
+                            <div>
+                                <Icon icon={faLocationArrow} />
+                                {location}
+                            </div>
+                        )}
+                    </span>
                 </div>
 
                 <div className="social-link">
@@ -136,7 +147,19 @@ const AboutPage = () => {
                                             return (
                                                 <React.Fragment key={index}>
                                                     <span className="project">
-                                                        {item.name}
+                                                        {item.name}{' '}
+                                                        {item?.link && (
+                                                            <a
+                                                                href={item.link}
+                                                                target="_blank"
+                                                            >
+                                                                <Icon
+                                                                    icon={
+                                                                        faLink
+                                                                    }
+                                                                />
+                                                            </a>
+                                                        )}
                                                     </span>
 
                                                     <p className="description">
@@ -201,7 +224,7 @@ const AboutPage = () => {
                             )
                         })}
 
-                        <Icon icon={faRocket} />
+                        <Icon icon={faRocket} className="rocket" />
                     </S.ContentSection>
                 )}
             </S.ContentWrapper>

@@ -5,7 +5,7 @@ import * as S from '../styles/work'
 
 const WorkPage = () => (
     <S.Wrapper>
-        <section>
+        {/* <section>
             <img src="https://images.cakeresume.com/Y3MER/schiafang/233137f1-a2a1-47c5-873f-3997713a9889.png" />
 
             <div className="project-introduction">
@@ -27,7 +27,7 @@ const WorkPage = () => (
                     <li>暗黑模式切換</li>
                 </ul>
             </div>
-        </section>
+        </section> */}
 
         <section>
             <a href="https://schiafang.github.io/tripday-vue/" target="_blank">
@@ -35,7 +35,9 @@ const WorkPage = () => (
             </a>
             <div className="project-introduction">
                 <h2>
-                    Tripday
+                    <div className="title">
+                        Tripday <span className="year">2020</span>
+                    </div>
                     <a
                         href="https://github.com/schiafang/tripday-vue"
                         target="_blank"
@@ -73,7 +75,9 @@ const WorkPage = () => (
 
             <div className="project-introduction">
                 <h2>
-                    Simple Twitter
+                    <div className="title">
+                        Simple Twitter <span className="year">2020</span>
+                    </div>
                     <a
                         href="https://github.com/schiafang/twitter-fullstack-2020"
                         target="_blank"
@@ -112,7 +116,9 @@ const WorkPage = () => (
 
             <div className="project-introduction">
                 <h2>
-                    Expense tracker
+                    <div className="title">
+                        Expense tracker <span className="year">2020</span>
+                    </div>
                     <a
                         href="https://github.com/schiafang/expense-tracker"
                         target="_blank"

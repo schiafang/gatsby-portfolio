@@ -14,6 +14,10 @@ export const Wrapper = styled.div`
         letter-spacing: 1.2px;
         margin-bottom: 100px;
 
+        & img {
+            width: 100%;
+        }
+
         .project-introduction {
             padding: 0 15px;
             font-size: 0.9rem;
@@ -35,6 +39,20 @@ export const Wrapper = styled.div`
 
             > h2 a {
                 color: ${props => props.theme.primary};
+            }
+
+            > h2 .title {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            > h2 .year {
+                background-color: ${props => props.theme.red};
+                font-size: 12px;
+                border-radius: 50px;
+                padding: 3px 10px;
+                color: white;
             }
 
             > p {
@@ -72,7 +90,7 @@ export const Wrapper = styled.div`
         }
     }
 
-    @media screen and (min-width: 1600px) {
+    @media screen and (min-width: 1280px) {
         section .project-introduction {
             padding: 0 7rem;
         }

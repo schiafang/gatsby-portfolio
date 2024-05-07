@@ -102,8 +102,8 @@ const NavMenus = ({ isDark, setIsDark }) => {
                 </>
             ) : (
                 <div className="menu-items">
-                    <Link to="/list/1">ARTICLE</Link>
-                    <span className="slash">/</span>
+                    {/* <Link to="/list/1">ARTICLE</Link>
+                    <span className="slash">/</span> */}
                     <Link to="/about">RESUME</Link>
                     <span className="slash">/</span>
                     <Link to="/work">WORK</Link>

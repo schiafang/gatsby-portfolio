@@ -6,8 +6,9 @@ export const Wrapper = styled.div`
     height: 100%;
     font-family: 'Roboto', sans-serif;
     margin: 30px 0;
-    box-shadow: ${props => props.theme.primary}25 1px 1px 4px;
-    border-radius: 4px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 20px;
     line-height: 1.56;
     letter-spacing: 1.2px;
 
@@ -19,9 +20,11 @@ export const Wrapper = styled.div`
         padding: 60px 45px;
     }
 
-    @media screen and (min-width: 1600px) {
-        margin: 30px 0;
+    @media screen and (min-width: 1440px) {
+        margin: 30px auto;
+        max-width: 1600px;
         display: grid;
+        padding: 60px 1rem;
         grid-template-columns: minmax(300px, 30%) auto auto;
     }
 `
@@ -32,7 +35,8 @@ export const Info = styled.div`
     background-color: ${props => props.theme.bg}20;
     border-radius: 4px 4px 0 0;
     height: auto;
-    padding: 2rem;
+    padding: 1.5rem;
+    padding-right: 2rem;
     display: grid;
     grid-template-columns: auto 80px;
     grid-template-rows: minmax(30px, auto) repeat(4, auto);
@@ -43,7 +47,7 @@ export const Info = styled.div`
         'contact contact'
         'link link';
 
-    @media screen and (min-width: 1600px) {
+    @media screen and (min-width: 1440px) {
         grid-column: 1 / 2;
         border-radius: 4px 0 0 4px;
         grid-template-columns: auto;
@@ -72,7 +76,7 @@ export const Info = styled.div`
             object-position: 60% 30%;
         }
 
-        @media screen and (min-width: 1600px) {
+        @media screen and (min-width: 1440px) {
             justify-self: center;
             border-radius: 37% 42% 39% 43%;
             width: 100px;
@@ -95,7 +99,7 @@ export const Info = styled.div`
             /* color: #666; */
         }
 
-        @media screen and (min-width: 1600px) {
+        @media screen and (min-width: 1440px) {
             justify-self: center;
         }
     }
@@ -106,7 +110,7 @@ export const Info = styled.div`
         font-size: 0.9rem;
         font-size: 0.9em;
 
-        @media screen and (min-width: 1600px) {
+        @media screen and (min-width: 1440px) {
             justify-self: center;
         }
     }
@@ -152,7 +156,8 @@ export const Info = styled.div`
             margin-bottom: 0.5rem;
         }
 
-        a {
+        a,
+        div {
             color: ${props => props.theme.gray};
             text-decoration: none;
 
@@ -161,10 +166,10 @@ export const Info = styled.div`
                 width: 12px;
                 height: 12px;
             }
+        }
 
-            &:hover {
-                color: ${props => props.theme.green};
-            }
+        a:hover {
+            color: ${props => props.theme.green};
         }
     }
 
@@ -211,7 +216,7 @@ export const ContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
 
-    @media screen and (min-width: 1600px) {
+    @media screen and (min-width: 1440px) {
         height: 100%;
         grid-column: 2 / 3;
         border-top: none;
@@ -262,21 +267,22 @@ export const ContentSection = styled.section`
         }
     }
 
-    @media screen and (min-width: 1600px) {
+    @media screen and (min-width: 1440px) {
         padding: 2rem;
         grid-row: 1 / 2;
         margin-bottom: 0;
 
         &.experience {
-            grid-column: 1 / span 1;
+            grid-column: 1 / span 2;
             max-height: 100%;
             overflow: auto;
         }
 
         &.skills {
             display: block;
-            grid-column: 2 / span 1;
+            grid-column: 3 / span 1;
             white-space: nowrap;
+            top: 0;
         }
     }
 
@@ -321,10 +327,16 @@ export const ContentSection = styled.section`
         }
 
         .project {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             color: #437c90;
             font-weight: 600;
             margin: 2rem 0 0.4rem 0;
+
+            & a {
+                color: ${props => props.theme.red};
+            }
         }
 
         .description {
@@ -342,7 +354,6 @@ export const ContentSection = styled.section`
             background-repeat: no-repeat;
             background-size: 100% 0.5em;
             background-position: 0 88%;
-            padding: 0 5px;
         }
 
         > ul {
@@ -363,7 +374,7 @@ export const ContentSection = styled.section`
         padding: 0 30px 15px 30px;
     }
 
-    svg {
+    .rocket {
         color: ${props => props.theme.red};
         position: relative;
         top: 1.2rem;

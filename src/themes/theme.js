@@ -5,7 +5,7 @@ export const baseTheme = {
     breakpoints: {
         tablet: 'screen and (min-width: 768px)',
         desktop: 'screen and (min-width: 1040px)',
-        wideScreen: 'screen and (min-width: 1600px)',
+        wideScreen: 'screen and (min-width: 1280px)',
     },
 }
 

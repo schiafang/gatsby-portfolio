@@ -49,6 +49,14 @@ export default createGlobalStyle`
             @media screen and (min-width: 1040px) {
                 padding: 1rem 7.5rem;
             }
+
+            @media screen and (min-width: 1280px) {
+                padding: 1rem 3rem;
+            }
+
+            @media screen and (min-width: 1440px) {
+                padding: 1rem 3rem;
+            }
         }
     `}
 `
