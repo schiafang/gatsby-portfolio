@@ -23,7 +23,7 @@ export const darkTheme = {
 export const lightTheme = {
     ...baseTheme,
     isDarkMode: false,
-    bg: '#f2efe7',
+    bg: '#f8f8f8',
     border: '#ddd',
     primary: '#212121',
     red: '#D14836',
